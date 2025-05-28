@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/app_icon"
         android:layout_width="250dp"
@@ -62,6 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Breakfast" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -125,6 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Brunch" />
+
         </LinearLayout>
 
         <LinearLayout
