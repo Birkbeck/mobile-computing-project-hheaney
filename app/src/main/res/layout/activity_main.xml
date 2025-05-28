@@ -22,7 +22,7 @@
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Culinary Companion"
+        android:text="Chef's Kiss"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/app_icon"
@@ -43,47 +43,131 @@
         android:alignmentMode="alignMargins"
         android:useDefaultMargins="true">
 
-        <Button
-            android:id="@+id/button_breakfast"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:text="Breakfast" />
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/button_brunch"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="Brunch" />
+            <ImageView
+                android:id="@+id/icon_breakfast"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_breakfast"
+                android:contentDescription="Breakfast Icon" />
 
-        <Button
-            android:id="@+id/button_lunch"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="Lunch" />
+            <Button
+                android:id="@+id/button_breakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breakfast" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/button_dinner"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:text="Dinner" />
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/button_dessert"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="Dessert" />
+            <ImageView
+                android:id="@+id/icon_lunch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_lunch"
+                android:contentDescription="Breakfast Icon" />
 
-        <Button
-            android:id="@+id/button_other"
+            <Button
+                android:id="@+id/button_lunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:text="Other" />
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_dinner"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_dinner"
+                android:contentDescription="Dinner Icon" />
+
+            <Button
+                android:id="@+id/button_dinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinner" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_brunch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_brunch"
+                android:contentDescription="Brunch Icon" />
+
+            <Button
+                android:id="@+id/button_brunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brunch" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_dessert"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_dessert"
+                android:contentDescription="Dessert Icon" />
+
+            <Button
+                android:id="@+id/button_dessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dessert" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_other"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_other"
+                android:contentDescription="Other Icon" />
+
+            <Button
+                android:id="@+id/button_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other" />
+        </LinearLayout>
 
     </GridLayout>
 
