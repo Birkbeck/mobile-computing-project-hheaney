@@ -7,9 +7,10 @@
     <!--Add Recipe page.
      This page allows a user to select the category of food (i.e. breakfast/lunch etc),
      add a corresponding name (i.e. 'Muffins'), add ingredients and cooking instructions.
-     A user may also add an image from their phone/camera - TBC-->
+     A user may also add an image from their phone/camera.  -->
 
-
+<!-- Header for Add Recipe
+     Displays the page title (placeholder icon for food).  -->
     <LinearLayout
         android:id="@+id/add_recipe_header"
         android:layout_width="wrap_content"
@@ -51,6 +52,8 @@
         android:layout_marginTop="16dp"
         />
 
+    <!-- LinearLayout for Recipe Details.
+         Allows a user to add recipe name, ingredients, instructions and an image.-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -116,6 +119,8 @@
 
     </LinearLayout>
 
+    <!-- Footer with navigation buttons.
+         Contains buttons for Back, Home and Save.-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
