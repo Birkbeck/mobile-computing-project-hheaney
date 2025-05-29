@@ -7,7 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Main Activity Layout
+         This is the splash page which is essentially a home page.  It displays the name of the app
+         ("Chef's Kiss") and has quick links which takes a user to various food categories
+         (e.g. breakfast, lunch, dinner).  There is also a quick link to display all recipes and a
+         quick 'add recipe' button which takes a user to the part of the application to add a
+         recipe.-->
 
+    <!-- App Icon and app name. -->
     <ImageView
         android:id="@+id/app_icon"
         android:layout_width="250dp"
@@ -31,6 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
+<!-- Quick Links Grid to food categories. -->
     <GridLayout
         android:id="@+id/quick_links_grid"
         android:layout_width="0dp"
@@ -174,6 +182,7 @@
 
     </GridLayout>
 
+    <!-- Quick Links to View All Recipes and Add Recipe -->
     <Button
         android:id="@+id/view_all_recipes_button"
         android:layout_width="wrap_content"
