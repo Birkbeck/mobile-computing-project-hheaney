@@ -34,6 +34,7 @@
     <string name="back_button_text">Back</string>
     <string name="home_button_text">Home</string>
     <string name="save_button_text">Save</string>
+    <string name="edit_button_text">Edit</string>
 
     <!--Add Recipe descriptions-->
     <string name="add_recipe_icon_description">Add Recipe Icon</string>
@@ -49,6 +50,24 @@
     <!-- Edit Recipe description -->
     <string name="edit_recipe_icon_description">Edit Recipe Icon</string>
     <string name="edit_image_description">Edit Recipe Image</string>
+
+    <!-- View Recipe strings -->
+    <string name="selected_recipe_name_title">White Chocolate Brownies</string>
+    <string name="selected_recipe_name">Recipe Name</string>
+    <string name="selected_recipe_name_text">White Chocolate Brownies\n</string>
+    <string name="selected_recipe_ingredients">Ingredients</string>
+    <string name="selected_recipe_ingredients_text">500ml low fat milk\n3 eggs\nFlour\nSugar\nSalt\n"</string>
+    <string name="selected_recipe_instructions">Instructions</string>
+    <string name="selected_recipe_instructions_text">1)  Preheat oven to 350°F (175°C).\n2)
+        Mix ingredients. \n3)  Bake for 30 minutes.\n"</string>
+
+
+
+
+    <!-- View Recipe descriptions -->
+    <string name="selected_recipe_icon_description">Selected Recipe Icon</string>
+    <string name="selected_recipe_image">Selected Recipe Image</string>
+
 
 
     <resources>

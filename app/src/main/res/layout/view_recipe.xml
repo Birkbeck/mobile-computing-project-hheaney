@@ -27,14 +27,14 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/icon_dinner"
-            android:contentDescription="Recipe Icon"
+            android:contentDescription="@string/selected_recipe_icon_description"
             android:layout_marginEnd="8dp"/>
 
         <TextView
             android:id="@+id/recipe_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="White Chocolate Brownies"
+            android:text="@string/selected_recipe_name_title"
             android:textSize="24sp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_brunch"
-            android:contentDescription="Recipe Image"
+            android:contentDescription="@string/selected_recipe_image"
             />
     </LinearLayout>
 
@@ -71,49 +71,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="11dp">
+        android:layout_marginStart="11dp">
 
         <TextView
             android:id="@+id/recipe_name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recipe Name"
+            android:text="@string/selected_recipe_name"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/recipe_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brownies\n"
+            android:text="@string/selected_recipe_name_text"
             />
 
         <TextView
             android:id="@+id/ingredients_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingredients"
+            android:text="@string/selected_recipe_ingredients"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/recipe_ingredients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="500ml low fat milk\n3 eggs\nFlour\nSugar\nSalt\n"
+            android:text="@string/selected_recipe_ingredients_text"
             />
 
         <TextView
             android:id="@+id/recipe_instructions_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Instructions"
+            android:text="@string/selected_recipe_instructions"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/recipe_instructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1)  Preheat oven to 350°F (175°C).\n2)  Mix ingredients. \n3)  Bake for 30 minutes.\n"
-            />
+            android:text="@string/selected_recipe_instructions_text"/>
     </LinearLayout>
 
     <!-- Section for navigation buttons.
@@ -135,7 +134,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Back"
+            android:text="@string/back_button_text"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"/>
 
@@ -144,7 +143,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Home"
+            android:text="@string/home_button_text"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"/>
 
@@ -153,7 +152,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Edit"
+            android:text="@string/edit_button_text"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"/>
     </LinearLayout>
