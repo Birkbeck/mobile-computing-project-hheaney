@@ -23,6 +23,22 @@
     <string name="button_all_recipes">All Recipes</string>
     <string name="button_add_recipe">+</string>
 
+    <!-- Add Recipe screen strings -->
+    <string name="add_recipe_title">Add Recipe</string>
+    <string name="add_recipe_name_label">Recipe Name +</string>
+    <string name="add_recipe_ingredients_label">Ingredients +</string>
+    <string name="add_recipe_instructions_label">Instructions +</string>
+    <string name="add_recipe_upload_image">Upload Image</string>
+
+    <!-- Footer navigation strings -->
+    <string name="back_button_text">Back</string>
+    <string name="home_button_text">Home</string>
+    <string name="save_button_text">Save</string>
+
+    <!--Add Recipe descriptions-->
+    <string name="add_recipe_icon_description">Add Recipe Icon</string>
+    <string name="recipe_category_description">Select Recipe Category</string>
+
     <resources>
         <!-- ...Food categories for spinner... -->
         <string-array name="recipe_categories">
