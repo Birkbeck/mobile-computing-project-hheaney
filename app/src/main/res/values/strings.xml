@@ -39,6 +39,18 @@
     <string name="add_recipe_icon_description">Add Recipe Icon</string>
     <string name="recipe_category_description">Select Recipe Category</string>
 
+    <!-- Edit Recipe strings -->
+    <string name="edit_recipe_title">Edit Recipe</string>
+    <string name="edit_image_button_text">Edit Image</string>
+    <string name="edit_recipe_name">Edit Name</string>
+    <string name="edit_recipe_ingredients">Edit Ingredients</string>
+    <string name="edit_recipe_instructions">Edit Instructions</string>
+
+    <!-- Edit Recipe description -->
+    <string name="edit_recipe_icon_description">Edit Recipe Icon</string>
+    <string name="edit_image_description">Edit Recipe Image</string>
+
+
     <resources>
         <!-- ...Food categories for spinner... -->
         <string-array name="recipe_categories">
