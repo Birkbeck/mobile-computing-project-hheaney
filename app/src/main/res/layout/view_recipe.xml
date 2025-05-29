@@ -4,8 +4,15 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- View Recipe page.
+         This page displays the details of a recipe including its name, ingredients, instructions,
+         and an image.  It also provides options to edit the recipe or navigate back to the main
+         menu. -->
+
+    <!-- Header for the recipe view.
+         Displays the recipe name and an icon related to that food category. -->
     <LinearLayout
-        android:id="@+id/add_recipe_header"
+        android:id="@+id/recipe_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -16,28 +23,30 @@
         android:layout_marginTop="16dp">
 
         <ImageView
-            android:id="@+id/edit_recipe_icon"
+            android:id="@+id/recipe_icon"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/icon_dinner"
-            android:contentDescription="Edit Recipe Icon"
+            android:contentDescription="Recipe Icon"
             android:layout_marginEnd="8dp"/>
 
         <TextView
-            android:id="@+id/add_recipe_title"
+            android:id="@+id/recipe_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="White Chcocolate Brownies"
+            android:text="White Chocolate Brownies"
             android:textSize="24sp"
             android:textStyle="bold"/>
     </LinearLayout>
 
+    <!-- Section for displaying the recipe image.
+         This section contains an ImageView to show the recipe image. -->
     <LinearLayout
-        android:id="@+id/edit_image_section"
+        android:id="@+id/image_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/add_recipe_header"
+        app:layout_constraintTop_toBottomOf="@id/recipe_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
@@ -50,15 +59,15 @@
             android:src="@drawable/icon_brunch"
             android:contentDescription="Recipe Image"
             />
-
-
     </LinearLayout>
 
+    <!-- Section for displaying recipe details.
+         This section contains TextViews for the recipe name, ingredients, and instructions. -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/edit_image_section"
+        app:layout_constraintTop_toBottomOf="@id/image_section"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
@@ -105,11 +114,10 @@
             android:layout_height="wrap_content"
             android:text="1)  Preheat oven to 350°F (175°C).\n2)  Mix ingredients. \n3)  Bake for 30 minutes.\n"
             />
-
-
-
     </LinearLayout>
 
+    <!-- Section for navigation buttons.
+         This section contains buttons to navigate back, go home, or edit the recipe. -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
