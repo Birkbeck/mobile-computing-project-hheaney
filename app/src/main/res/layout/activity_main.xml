@@ -19,7 +19,7 @@
         android:id="@+id/app_icon"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:contentDescription="App Icon"
+        android:contentDescription="@string/app_icon_description"
         android:src="@drawable/chef_kiss"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +30,8 @@
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chef's Kiss"
-        android:textSize="35dp"
+        android:text="@string/app_name"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/app_icon"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,13 +64,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_breakfast"
-                android:contentDescription="Breakfast Icon" />
+                android:contentDescription="@string/icon_breakfast_description"/>
 
             <Button
                 android:id="@+id/button_breakfast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Breakfast" />
+                android:text="@string/button_breakfast"/>
 
         </LinearLayout>
 
@@ -86,13 +86,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_lunch"
-                android:contentDescription="Breakfast Icon" />
+                android:contentDescription="@string/icon_lunch_description" />
 
             <Button
                 android:id="@+id/button_lunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lunch" />
+                android:text="@string/button_lunch"/>
         </LinearLayout>
 
         <LinearLayout
@@ -107,13 +107,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_dinner"
-                android:contentDescription="Dinner Icon" />
+                android:contentDescription="@string/icon_dinner_description" />
 
             <Button
                 android:id="@+id/button_dinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dinner" />
+                android:text="@string/button_dinner" />
         </LinearLayout>
 
         <LinearLayout
@@ -128,13 +128,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_brunch"
-                android:contentDescription="Brunch Icon" />
+                android:contentDescription="@string/icon_brunch_description" />
 
             <Button
                 android:id="@+id/button_brunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brunch" />
+                android:text="@string/button_brunch"/>
 
         </LinearLayout>
 
@@ -150,13 +150,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_dessert"
-                android:contentDescription="Dessert Icon" />
+                android:contentDescription="@string/icon_dessert_description" />
 
             <Button
                 android:id="@+id/button_dessert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dessert" />
+                android:text="@string/button_dessert" />
         </LinearLayout>
 
         <LinearLayout
@@ -171,13 +171,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_other"
-                android:contentDescription="Other Icon" />
+                android:contentDescription="@string/icon_other_description"/>
 
             <Button
                 android:id="@+id/button_other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Other" />
+                android:text="@string/button_other"/>
         </LinearLayout>
 
     </GridLayout>
@@ -187,19 +187,19 @@
         android:id="@+id/view_all_recipes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View All Recipes"
+        android:contentDescription="@string/view_all_recipes_description"
+        android:text="@string/button_all_recipes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/add_recipe_button"
         android:layout_marginBottom="16dp"/>
 
-
     <Button
         android:id="@+id/add_recipe_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="Add Recipe"
-        android:text="+"
+        android:contentDescription="@string/add_recipe_description"
+        android:text="@string/button_add_recipe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

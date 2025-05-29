@@ -1,5 +1,28 @@
 <resources>
-    <string name="app_name">CulinaryCookingApp</string>
+    <!-- activity_main.xml string values-->
+    <string name="app_name">Chef\'s Kiss</string>
+    <string name="app_icon_description">App Icon</string>
+
+    <!-- Quick Links descriptions-->
+    <string name="icon_breakfast_description">Breakfast Icon</string>
+    <string name="icon_brunch_description">Brunch Icon</string>
+    <string name="icon_lunch_description">Lunch Icon</string>
+    <string name="icon_dinner_description">Dinner Icon</string>
+    <string name="icon_dessert_description">Dessert Icon</string>
+    <string name="icon_other_description">Other Icon</string>
+    <string name="view_all_recipes_description">View All Recipes</string>
+    <string name="add_recipe_description">Add Recipe</string>
+
+    <!-- Quick Links button text -->
+    <string name="button_breakfast">Breakfast</string>
+    <string name="button_brunch">Brunch</string>
+    <string name="button_lunch">Lunch</string>
+    <string name="button_dinner">Dinner</string>
+    <string name="button_dessert">Dessert</string>
+    <string name="button_other">Other</string>
+    <string name="button_all_recipes">All Recipes</string>
+    <string name="button_add_recipe">+</string>
+
     <resources>
         <!-- ...Food categories for spinner... -->
         <string-array name="recipe_categories">
@@ -10,5 +33,6 @@
             <item>Dessert</item>
             <item>Other</item>
         </string-array>
+
     </resources>
 </resources>
