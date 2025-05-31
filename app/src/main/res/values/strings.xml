@@ -61,14 +61,20 @@
     <string name="selected_recipe_instructions_text">1)  Preheat oven to 350°F (175°C).\n2)
         Mix ingredients. \n3)  Bake for 30 minutes.\n"</string>
 
-
-
-
     <!-- View Recipe descriptions -->
     <string name="selected_recipe_icon_description">Selected Recipe Icon</string>
     <string name="selected_recipe_image">Selected Recipe Image</string>
 
+    <!-- View All Recipes strings -->
+    <string name="view_all_recipes_title">All Recipes</string>
 
+    <!-- View All Recipes descriptions -->
+    <string name="view_all_recipes_icon_description">View All Recipes Icon</string>
+
+    <!-- Item Recipe strings -->
+    <string name="recipe_image_description">Recipe Image</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="view_button_text">View</string>
 
     <resources>
         <!-- ...Food categories for spinner... -->
