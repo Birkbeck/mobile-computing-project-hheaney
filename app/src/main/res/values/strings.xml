@@ -76,7 +76,7 @@
     <string name="recipe_title">Recipe Title</string>
     <string name="view_button_text">View</string>
 
-    <resources>
+
         <!-- ...Food categories for spinner... -->
         <string-array name="recipe_categories">
             <item>Breakfast</item>
@@ -87,5 +87,5 @@
             <item>Other</item>
         </string-array>
 
-    </resources>
+
 </resources>
