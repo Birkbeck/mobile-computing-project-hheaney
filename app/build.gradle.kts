@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
 }
+apply(plugin = "kotlin-kapt")
 
 android {
     namespace = "co.uk.bbk.culinarycookingapp"
@@ -32,6 +34,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 }
 
