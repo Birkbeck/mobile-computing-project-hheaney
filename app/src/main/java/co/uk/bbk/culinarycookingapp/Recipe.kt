@@ -16,6 +16,6 @@ data class Recipe (
     val name: String? = null,
     val ingredients: String? = null,
     val instructions: String? = null,
-    val imageUri: String? = null
-
-    ): Serializable
+    val imageUri: String? = null,
+    val category: String? = null
+) : Serializable
