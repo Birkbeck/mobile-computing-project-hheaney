@@ -1,5 +1,6 @@
 package co.uk.bbk.culinarycookingapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +22,21 @@ class AllRecipesActivity : AppCompatActivity() {
         binding.recipesRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.recipesRecyclerView.adapter = adapter
 
+        binding.homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val category = intent.getStringExtra("CATEGORY")
+
         viewModel.recipes.observe(this) { recipes ->
-            adapter.submitList(recipes)
+            val filteredRecipes = if (category != null) {
+                recipes.filter { it.category == category }
+            } else {
+                recipes
+            }
+            adapter.submitList(filteredRecipes)
         }
     }
 }
