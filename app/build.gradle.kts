@@ -1,9 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-
+    alias(libs.plugins.kotlin.android) version "1.9.23"
+    id("kotlin-kapt")
 }
-apply(plugin = "kotlin-kapt")
+
+configurations.all {
+    resolutionStrategy.eachDependency {
+        if (requested.group == "org.jetbrains.kotlin") {
+            useVersion("1.9.23")
+        }
+    }
+}
+
 
 android {
     namespace = "co.uk.bbk.culinarycookingapp"
@@ -37,7 +45,7 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
+        //dataBinding = true
         viewBinding = true
     }
 }
@@ -55,4 +63,5 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    kapt("androidx.room:room-compiler:2.6.1")
 }
