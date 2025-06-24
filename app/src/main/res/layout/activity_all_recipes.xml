@@ -10,17 +10,19 @@
      Displays the page title (placeholder icon for food).  -->
     <LinearLayout
         android:id="@+id/view_all_recipes_header"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center_vertical"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@id/recipe_filter_spinner">
 
-        <!-- Icon for View All Recipes -->
+
+    <!-- Icon for View All Recipes -->
         <ImageView
             android:id="@+id/view_all_recipes_icon"
             android:layout_width="32dp"
@@ -30,7 +32,7 @@
             android:layout_marginEnd="8dp"/>
 
         <TextView
-            android:id="@+id/add_recipe_title"
+            android:id="@+id/all_recipes_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/view_all_recipes_title"
