@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 
@@ -17,6 +18,10 @@ interface RecipesDao {
 
     @Insert
     suspend fun insertRecipe(recipe: Recipe)
+
+    // For sample data
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertRecipes(recipes: List<Recipe>)
 
     @Update
     suspend fun updateRecipe(recipe: Recipe)

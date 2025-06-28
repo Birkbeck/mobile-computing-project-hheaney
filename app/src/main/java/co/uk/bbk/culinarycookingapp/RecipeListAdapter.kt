@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import co.uk.bbk.culinarycookingapp.databinding.ItemRecipeBinding
+import android.util.Log
 
 class RecipeListAdapter :
     ListAdapter<Recipe, RecipeListAdapter.RecipeViewHolder>(RecipeDiffCallback()) {
@@ -19,6 +20,7 @@ class RecipeListAdapter :
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = getItem(position)
+        Log.d("BBK", "Binding recipe $recipe")
         holder.bind(recipe)
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context

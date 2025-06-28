@@ -1,11 +1,13 @@
 package co.uk.bbk.culinarycookingapp
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Recipe::class], version = 1)
+
+@Database(entities = [Recipe::class], version = 3)
 abstract class RecipesDatabase : RoomDatabase(){
 
     abstract fun recipesDao(): RecipesDao
@@ -21,8 +23,6 @@ abstract class RecipesDatabase : RoomDatabase(){
                     "recipes_database"
                 )
                 .fallbackToDestructiveMigration()
-
-
                 .build().also { INSTANCE = it }
 
             }

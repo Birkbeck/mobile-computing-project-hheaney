@@ -23,6 +23,8 @@
         <activity
             android:name=".AllRecipesActivity"
             android:exported="false" />
+        <activity android:name=".ViewRecipeActivity" />
+        <activity android:name=".AddRecipeActivity" />
 
     </application>
 

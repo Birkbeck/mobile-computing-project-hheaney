@@ -20,7 +20,7 @@ class ViewRecipeActivity : AppCompatActivity() {
         if (recipeId != -1) {
             viewModel.getRecipeById(recipeId).observe(this) { recipe ->
                 recipe?.let {
-                    binding.recipeTitle.text = it.name
+                    binding.recipeName.text = it.name
                     binding.recipeIngredients.text = it.ingredients
                     binding.recipeInstructions.text = it.instructions
                     it.imageUri?.let { imgRes ->

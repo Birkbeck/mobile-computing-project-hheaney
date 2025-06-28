@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
             val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
             viewModel.recipesDao = dao
-            viewModel.generateSampleData()
+            //viewModel.generateSampleData()
             viewModel.readAllRecipes()
 
 
@@ -34,42 +34,48 @@ class MainActivity : AppCompatActivity() {
             val breakfastButton = binding.buttonBreakfast
             breakfastButton.setOnClickListener {
                 val intent = Intent(this, AllRecipesActivity::class.java)
-                intent.putExtra("CATEGORY", "Breakfast")
+                intent.putExtra("category", "Breakfast")
                 startActivity(intent)
             }
 
             val lunchButton = binding.buttonLunch
             lunchButton.setOnClickListener {
                 val intent = Intent(this, AllRecipesActivity::class.java)
-                intent.putExtra("CATEGORY", "Lunch")
+                intent.putExtra("category", "Lunch")
                 startActivity(intent)
             }
 
             val dinnerButton = binding.buttonDinner
             dinnerButton.setOnClickListener {
                 val intent = Intent(this, AllRecipesActivity::class.java)
-                intent.putExtra("CATEGORY", "Dinner")
+                intent.putExtra("category", "Dinner")
                 startActivity(intent)
             }
 
             val brunchButton = binding.buttonBrunch
            brunchButton.setOnClickListener {
                 val intent = Intent(this, AllRecipesActivity::class.java)
-                intent.putExtra("CATEGORY", "Brunch")
+                intent.putExtra("category", "Brunch")
                 startActivity(intent)
             }
 
             val dessertButton = binding.buttonDessert
             dessertButton.setOnClickListener {
                 val intent = Intent(this, AllRecipesActivity::class.java)
-                intent.putExtra("CATEGORY", "Dessert")
+                intent.putExtra("category", "Dessert")
                 startActivity(intent)
             }
 
             val otherButton = binding.buttonOther
             otherButton.setOnClickListener {
                 val intent = Intent(this, AllRecipesActivity::class.java)
-                intent.putExtra("CATEGORY", "Other")
+                intent.putExtra("category", "Other")
+                startActivity(intent)
+            }
+
+            val addRecipe = binding.addRecipeButton
+            addRecipe.setOnClickListener {
+                val intent = Intent(this, AddRecipeActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -1,5 +1,6 @@
 package co.uk.bbk.culinarycookingapp
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -78,6 +79,7 @@ class RecipesViewModel: ViewModel() {
     fun generateSampleData() {
         viewModelScope.launch {
             recipesDao?.let { dao ->
+               Log.d("BBK", "Generating sample recipes")
                 val sampleRecipes = listOf(
                     Recipe(
                         name = "Spaghetti Bolognese",
@@ -129,7 +131,11 @@ class RecipesViewModel: ViewModel() {
                         category = "Dessert"
                     )
                 )
-                sampleRecipes.forEach { recipe -> dao.insertRecipe(recipe) }
+                //sampleRecipes.forEach { recipe -> dao.insertRecipe(recipe) }
+                //val allRecipes = dao.getAllRecipes()
+                //Log.d("BBK", "Recipes in databse: $allRecipes")
+                recipesDao?.insertRecipes(sampleRecipes)
+                Log.d("BBK", "Sample recipes inserted: ${sampleRecipes.size}")
                 readAllRecipes()
             }
         }

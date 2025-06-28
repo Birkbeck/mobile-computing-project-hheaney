@@ -2,6 +2,7 @@ package co.uk.bbk.culinarycookingapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,15 +23,14 @@ class AllRecipesActivity : AppCompatActivity() {
         binding.recipesRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.recipesRecyclerView.adapter = adapter
 
-        binding.homeButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        val category = intent.getStringExtra("CATEGORY")
+        // sample data - test.  to be deleted
+        val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
+        viewModel.recipesDao = dao
+        viewModel.readAllRecipes()
 
         viewModel.recipes.observe(this) { recipes ->
+            Log.d("BBK", "Observed recipes: $recipes")
+            val category = intent.getStringExtra("category")
             val filteredRecipes = if (category != null) {
                 recipes.filter { it.category == category }
             } else {
@@ -38,6 +38,14 @@ class AllRecipesActivity : AppCompatActivity() {
             }
             adapter.submitList(filteredRecipes)
         }
+
+        binding.homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val category = intent.getStringExtra("category")
     }
 }
 
