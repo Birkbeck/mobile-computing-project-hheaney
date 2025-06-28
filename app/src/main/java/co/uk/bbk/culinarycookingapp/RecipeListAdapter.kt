@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import co.uk.bbk.culinarycookingapp.databinding.ItemRecipeBinding
 import android.util.Log
 
-class RecipeListAdapter :
+class RecipeListAdapter(
+    private val viewRecipeClick: (Recipe) -> Unit,
+    private val editRecipeClick: (Recipe) -> Unit
+) :
     ListAdapter<Recipe, RecipeListAdapter.RecipeViewHolder>(RecipeDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -21,7 +24,7 @@ class RecipeListAdapter :
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = getItem(position)
         Log.d("BBK", "Binding recipe $recipe")
-        holder.bind(recipe)
+        holder.bind(recipe, viewRecipeClick, editRecipeClick)
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, ViewRecipeActivity::class.java)
@@ -32,10 +35,20 @@ class RecipeListAdapter :
 
     class RecipeViewHolder(private val binding: ItemRecipeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(recipe: Recipe) {
+        fun bind(recipe: Recipe,
+                 viewRecipeClick: (Recipe) -> Unit,
+                 editRecipeClick: (Recipe) -> Unit) {
             binding.recipeItemTitle.text = recipe.name
             recipe.imageUri?.let {
                 binding.recipeItemImage.setImageResource(it)
+            }
+            binding.recipeItemViewButton.setOnClickListener {
+                Log.d("BBK", "View button clicked for recipe: ${recipe.name}")
+                viewRecipeClick(recipe)
+            }
+            binding.recipeItemEditButton.setOnClickListener {
+                Log.d("BBK", "Edit button clicked for recipe: ${recipe.name}")
+                editRecipeClick(recipe)
             }
         }
     }

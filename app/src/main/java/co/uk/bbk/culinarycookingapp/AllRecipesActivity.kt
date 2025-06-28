@@ -19,7 +19,20 @@ class AllRecipesActivity : AppCompatActivity() {
         binding = ActivityAllRecipesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = RecipeListAdapter()
+        adapter = RecipeListAdapter(
+            viewRecipeClick = { recipe ->
+                Log.d("BBK", "View button clicked for recipe: ${recipe.name}")
+                val intent = Intent(this, ViewRecipeActivity::class.java)
+                intent.putExtra("RECIPE_ID", recipe.id)
+                startActivity(intent)
+            },
+            editRecipeClick = { recipe ->
+                Log.d("BBK", "Edit button clicked for recipe: ${recipe.name}")
+                val intent = Intent(this, AddRecipeActivity::class.java)
+                intent.putExtra("RECIPE_ID", recipe.id)
+                startActivity(intent)
+            }
+        )
         binding.recipesRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.recipesRecyclerView.adapter = adapter
 
