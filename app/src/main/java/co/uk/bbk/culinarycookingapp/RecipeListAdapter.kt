@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import co.uk.bbk.culinarycookingapp.databinding.ItemRecipeBinding
 import android.util.Log
 
-class RecipeListAdapter(
-    private val viewRecipeClick: (Recipe) -> Unit,
-    private val editRecipeClick: (Recipe) -> Unit
-) :
+class RecipeListAdapter :
     ListAdapter<Recipe, RecipeListAdapter.RecipeViewHolder>(RecipeDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -24,31 +21,29 @@ class RecipeListAdapter(
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = getItem(position)
         Log.d("BBK", "Binding recipe $recipe")
-        holder.bind(recipe, viewRecipeClick, editRecipeClick)
-        holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, ViewRecipeActivity::class.java)
-            intent.putExtra("RECIPE_ID", recipe.id)
-            context.startActivity(intent)
-        }
+        holder.bind(recipe)
     }
 
     class RecipeViewHolder(private val binding: ItemRecipeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(recipe: Recipe,
-                 viewRecipeClick: (Recipe) -> Unit,
-                 editRecipeClick: (Recipe) -> Unit) {
+        fun bind(recipe: Recipe) {
             binding.recipeItemTitle.text = recipe.name
+            binding.recipeItemId.text = "ID: ${recipe.id}"
             recipe.imageUri?.let {
                 binding.recipeItemImage.setImageResource(it)
             }
             binding.recipeItemViewButton.setOnClickListener {
-                Log.d("BBK", "View button clicked for recipe: ${recipe.name}")
-                viewRecipeClick(recipe)
+                val context = itemView.context
+                val intent = Intent(context, ViewRecipeActivity::class.java)
+                intent.putExtra("id", recipe.id)
+                Log.d("Adapter", "Sending recipe ID: ${recipe.id}")
+                context.startActivity(intent)
             }
             binding.recipeItemEditButton.setOnClickListener {
-                Log.d("BBK", "Edit button clicked for recipe: ${recipe.name}")
-                editRecipeClick(recipe)
+                val context = itemView.context
+                val intent = Intent(context, EditRecipeActivity::class.java)
+                intent.putExtra("id", recipe.id)
+                context.startActivity(intent)
             }
         }
     }

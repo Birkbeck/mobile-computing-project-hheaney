@@ -14,7 +14,7 @@ interface RecipesDao {
     suspend fun getAllRecipes(): List<Recipe>
 
     @Query("SELECT * FROM Recipes WHERE id = :id")
-    suspend fun getRecipeById(id: Int): Recipe?
+    fun getRecipeById(id: Int): LiveData<Recipe?>
 
     @Insert
     suspend fun insertRecipe(recipe: Recipe)
