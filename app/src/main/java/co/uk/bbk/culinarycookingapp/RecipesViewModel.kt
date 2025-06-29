@@ -75,6 +75,14 @@ class RecipesViewModel: ViewModel() {
         return dao.getRecipeById(id)
     }
 
+    fun updateRecipe(recipe: Recipe) {
+        viewModelScope.launch {
+            recipesDao?.let {
+                it.updateRecipe(recipe)
+                readAllRecipes()
+            }
+        }
+    }
 
 }
 

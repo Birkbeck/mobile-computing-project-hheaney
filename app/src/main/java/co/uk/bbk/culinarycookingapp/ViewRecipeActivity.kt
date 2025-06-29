@@ -1,6 +1,7 @@
 package co.uk.bbk.culinarycookingapp
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -12,8 +13,8 @@ class ViewRecipeActivity : AppCompatActivity() {
     private lateinit var binding : ViewRecipeBinding
     private val viewModel: RecipesViewModel by viewModels()
 
-    override fun onCreate(savedInstance: Bundle?) {
-        super.onCreate(savedInstance)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ViewRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -35,6 +36,13 @@ class ViewRecipeActivity : AppCompatActivity() {
                     //}
                 }
             }
+        }
+
+        binding.editButton.setOnClickListener {
+            val recipeId = intent.getIntExtra("id", -1)
+            val intent = Intent(this, EditRecipeActivity::class.java)
+            intent.putExtra("id", recipeId)
+            startActivity(intent)
         }
     }
 }
