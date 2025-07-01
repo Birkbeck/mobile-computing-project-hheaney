@@ -18,6 +18,12 @@ class ViewRecipeActivity : AppCompatActivity() {
         binding = ViewRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.root.setOnApplyWindowInsetsListener { view, insets ->
+            val systemBars = insets.getInsets(android.view.WindowInsets.Type.systemBars())
+            view.setPadding(0, systemBars.top, 0, systemBars.bottom)
+            insets
+        }
+
         val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
         viewModel.recipesDao = dao
 
@@ -43,6 +49,16 @@ class ViewRecipeActivity : AppCompatActivity() {
             val intent = Intent(this, EditRecipeActivity::class.java)
             intent.putExtra("id", recipeId)
             startActivity(intent)
+        }
+
+        binding.homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.backButton.setOnClickListener {
+            onBackPressed()
         }
     }
 }

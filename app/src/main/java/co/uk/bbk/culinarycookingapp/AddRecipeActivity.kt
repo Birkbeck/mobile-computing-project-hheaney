@@ -17,6 +17,12 @@ class AddRecipeActivity : AppCompatActivity(){
         binding = AddRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.root.setOnApplyWindowInsetsListener { view, insets ->
+            val systemBars = insets.getInsets(android.view.WindowInsets.Type.systemBars())
+            view.setPadding(0, systemBars.top, 0, systemBars.bottom)
+            insets
+        }
+
         ArrayAdapter.createFromResource(
             this,
             R.array.recipe_categories,

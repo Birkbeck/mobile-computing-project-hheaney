@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_light"> #FFFDE7</color>
+    <color name="primary_text_light">#4A154B</color>
+    <color name="secondary_text_light"> #212121 </color>
+    <color name="button_background_light">#FFB74D</color>
+    <color name="button_text_light">#4A154B</color>
+    <color name="nav_button_background">#4D90FF</color>
+    <color name="action_button_background">#9575CD</color>
+    <color name="spinner_background">#FFF8FB</color>
+    <color name="details_background">#FFF8FB</color>
+
 </resources>

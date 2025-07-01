@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background_light">
 
     <!-- Main Activity Layout
          This is the splash page which is essentially a home page.  It displays the name of the app
@@ -17,40 +18,61 @@
     <!-- App Icon and app name. -->
     <ImageView
         android:id="@+id/app_icon"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:contentDescription="@string/app_icon_description"
-        android:src="@drawable/chef_kiss"
+        android:src="@drawable/chefskiss"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/app_name"
+    <LinearLayout
+        android:id="@+id/app_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="35sp"
-        android:textStyle="bold"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/app_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="55sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/baloo_2_extra_bold"
+            android:textColor="@color/primary_text_light"
+            />
+
+        <ImageView
+            android:id="@+id/kiss_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/kiss"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_name" />
+    </LinearLayout>
+
 
 <!-- Quick Links Grid to food categories. -->
     <GridLayout
         android:id="@+id/quick_links_grid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/app_name"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/app_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:rowCount="2"
         android:columnCount="3"
         android:alignmentMode="alignMargins"
-        android:useDefaultMargins="true">
+        android:useDefaultMargins="true"
+        android:layout_marginBottom="32dp">
 
         <LinearLayout
             android:orientation="vertical"
@@ -70,7 +92,11 @@
                 android:id="@+id/button_breakfast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_breakfast"/>
+                android:text="@string/button_breakfast"
+                android:textSize="12sp"
+                android:backgroundTint="@color/button_background_light"
+                android:textColor="@color/button_text_light"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
@@ -92,7 +118,11 @@
                 android:id="@+id/button_lunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_lunch"/>
+                android:text="@string/button_lunch"
+                android:textSize="12sp"
+                android:backgroundTint="@color/button_background_light"
+                android:textColor="@color/button_text_light"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -113,7 +143,11 @@
                 android:id="@+id/button_dinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_dinner" />
+                android:text="@string/button_dinner"
+                android:textSize="12sp"
+                android:backgroundTint="@color/button_background_light"
+                android:textColor="@color/button_text_light"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -134,7 +168,11 @@
                 android:id="@+id/button_brunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_brunch"/>
+                android:text="@string/button_brunch"
+                android:textSize="12sp"
+                android:backgroundTint="@color/button_background_light"
+                android:textColor="@color/button_text_light"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
@@ -150,13 +188,18 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/icon_dessert"
-                android:contentDescription="@string/icon_dessert_description" />
+                android:contentDescription="@string/icon_dessert_description"
+                />
 
             <Button
                 android:id="@+id/button_dessert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_dessert" />
+                android:text="@string/button_dessert"
+                android:textSize="12sp"
+                android:backgroundTint="@color/button_background_light"
+                android:textColor="@color/button_text_light"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -177,7 +220,11 @@
                 android:id="@+id/button_other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_other"/>
+                android:text="@string/button_other"
+                android:textSize="12sp"
+                android:backgroundTint="@color/button_background_light"
+                android:textColor="@color/button_text_light"
+                android:textStyle="bold"/>
         </LinearLayout>
 
     </GridLayout>
@@ -192,7 +239,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/add_recipe_button"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/nav_button_background"
+        android:textColor="@color/button_text_light"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/add_recipe_button"
@@ -203,6 +253,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/action_button_background"
+        android:textColor="@color/button_text_light"
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

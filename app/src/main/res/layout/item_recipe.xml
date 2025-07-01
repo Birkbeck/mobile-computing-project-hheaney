@@ -7,7 +7,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="12dp"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@color/details_background">
 
     <!-- ImageView for the recipe item -->
 
@@ -34,7 +35,9 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/primary_text_light"
+            />
 
         <TextView
             android:id="@+id/recipe_item_id"
@@ -43,7 +46,9 @@
             android:text="ID: 0"
             android:textSize="14sp"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_light"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +63,10 @@
                 android:text="@string/view_button_text"
                 android:textSize="14sp"
                 android:minWidth="64dp"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/action_button_background"
+                android:textStyle="bold"
+                android:textColor="@color/button_text_light"/>
 
             <Button
                 android:id="@+id/recipe_item_edit_button"
@@ -67,7 +75,10 @@
                 android:layout_weight="1"
                 android:text="@string/edit_button_text"
                 android:textSize="14sp"
-                android:minWidth="64dp"/>
+                android:minWidth="64dp"
+                android:backgroundTint="@color/action_button_background"
+                android:textStyle="bold"
+                android:textColor="@color/button_text_light"/>
         </LinearLayout>
 
     </LinearLayout>

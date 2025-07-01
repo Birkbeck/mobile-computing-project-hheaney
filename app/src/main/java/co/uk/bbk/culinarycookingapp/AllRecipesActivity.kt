@@ -19,6 +19,12 @@ class AllRecipesActivity : AppCompatActivity() {
         binding = ActivityAllRecipesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.root.setOnApplyWindowInsetsListener { view, insets ->
+            val systemBars = insets.getInsets(android.view.WindowInsets.Type.systemBars())
+            view.setPadding(0, systemBars.top, 0, systemBars.bottom)
+            insets
+        }
+
         adapter = RecipeListAdapter()
         binding.recipesRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.recipesRecyclerView.adapter = adapter
@@ -31,6 +37,7 @@ class AllRecipesActivity : AppCompatActivity() {
         viewModel.recipes.observe(this) { recipes ->
             Log.d("BBK", "Observed recipes: $recipes")
             val category = intent.getStringExtra("category")
+            binding.allRecipesTitle.text = category ?: "All Recipes"
             val filteredRecipes = if (category != null) {
                 recipes.filter { it.category == category }
             } else {

@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_light">
 
     <!-- Edit Recipe page.
          This page allows a user to edit an existing recipe, including changing the name,
@@ -23,9 +24,9 @@
 
         <ImageView
             android:id="@+id/edit_recipe_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/icon_dinner"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/kiss"
             android:contentDescription="@string/edit_recipe_icon_description"
             android:layout_marginEnd="8dp"/>
 
@@ -35,7 +36,9 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_recipe_title"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_light"
+            />
     </LinearLayout>
 
     <!-- Displays the current image for that recipe with a button to upload a new image. -->
@@ -65,6 +68,8 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_image_button_text"
             android:layout_marginTop="8dp"
+            android:backgroundTint="@color/action_button_background"
+            android:textColor="@color/primary_text_light"
             />
     </LinearLayout>
 
@@ -78,7 +83,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="11dp">
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp">
+
+        <TextView
+            android:id="@+id/edit_recipe_category_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_recipe_category"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/edit_recipe_category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/spinner_background"
+            android:textColor="@color/primary_text_light"/>
 
         <TextView
             android:id="@+id/edit_recipe_name_label"
@@ -90,7 +109,9 @@
         <EditText
             android:id="@+id/edit_recipe_name_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/details_background"
+            android:textColor="@color/secondary_text_light"/>
 
         <TextView
             android:id="@+id/edit_recipe_ingredients_label"
@@ -106,7 +127,8 @@
             android:inputType="textMultiLine"
             android:minLines="3"
             android:gravity="top"
-            />
+            android:background="@color/details_background"
+            android:textColor="@color/secondary_text_light"/>
 
         <TextView
             android:id="@+id/edit_recipe_instructions_label"
@@ -121,50 +143,78 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:minLines="3"
-            android:gravity="top"/>
+            android:gravity="top"
+            android:background="@color/details_background"
+            android:textColor="@color/secondary_text_light"/>
 
     </LinearLayout>
 
     <!-- Section for action buttons at the bottom of the screen.
          Contains buttons for navigating back, going home, and saving the edited recipe. -->
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <Button
             android:id="@+id/back_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/back_button_text"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"/>
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:backgroundTint="@color/nav_button_background"
+            android:textColor="@color/primary_text_light"
+            />
 
         <Button
             android:id="@+id/home_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/home_button_text"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"/>
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:backgroundTint="@color/nav_button_background"
+            android:textColor="@color/primary_text_light"
+            />
 
         <Button
             android:id="@+id/save_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/save_button_text"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"/>
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:backgroundTint="@color/action_button_background"
+            android:textColor="@color/primary_text_light"
+            />
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/delete_button_text"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:backgroundTint="@color/action_button_background"
+            android:textColor="@color/primary_text_light"/>
     </LinearLayout>
 
 
