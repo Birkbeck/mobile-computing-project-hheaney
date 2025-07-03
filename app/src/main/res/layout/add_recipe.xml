@@ -127,6 +127,13 @@
             android:textStyle="bold"
             android:textColor="@color/edit_text_light"/>
 
+        <ImageView
+            android:id="@+id/recipe_image_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chefskiss" />
+
         <Button
             android:id="@+id/upload_image_button"
             android:layout_width="wrap_content"

@@ -2,6 +2,7 @@ package co.uk.bbk.culinarycookingapp
 
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -29,10 +30,19 @@ class RecipeListAdapter :
         fun bind(recipe: Recipe) {
             binding.recipeItemTitle.text = recipe.name
             binding.recipeItemId.text = "ID: ${recipe.id}"
-            recipe.imageUri?.let {
-                binding.recipeItemImage.setImageResource(it)
+            val imageUri = recipe.imageUri
+            Log.d("RecipeAdapter", "Recipe image URI: $imageUri")
+            try {
+                if(!imageUri.isNullOrEmpty()) {
+                    binding.recipeItemImage.setImageURI(Uri.parse(imageUri))
+                } else {
+                    binding.recipeItemImage.setImageResource(R.drawable.chefskiss)
+                }
+            } catch (e: Exception) {
+                Log.e("RecipeAdapter", "Error setting image URI for recipe ID: ${recipe.id}", e)
             }
             binding.recipeItemViewButton.setOnClickListener {
+                Log.d("RecipeAdapter", "View button clicked for recipe ID: ${recipe.id}")
                 val context = itemView.context
                 val intent = Intent(context, ViewRecipeActivity::class.java)
                 intent.putExtra("id", recipe.id)
@@ -40,6 +50,7 @@ class RecipeListAdapter :
                 context.startActivity(intent)
             }
             binding.recipeItemEditButton.setOnClickListener {
+                Log.d("RecipeAdapter", "Edit button clicked for recipe ID: ${recipe.id}")
                 val context = itemView.context
                 val intent = Intent(context, EditRecipeActivity::class.java)
                 intent.putExtra("id", recipe.id)

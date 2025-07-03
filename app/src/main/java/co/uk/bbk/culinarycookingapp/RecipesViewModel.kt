@@ -27,7 +27,7 @@ class RecipesViewModel: ViewModel() {
         name: String,
         ingredients: String,
         instructions: String,
-        imageUri: Int?,
+        imageUri: String,
         category: String
     ) {
         viewModelScope.launch {

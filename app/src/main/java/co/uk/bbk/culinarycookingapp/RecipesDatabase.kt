@@ -7,7 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [Recipe::class], version = 3)
+@Database(entities = [Recipe::class], version = 4)
 abstract class RecipesDatabase : RoomDatabase(){
 
     abstract fun recipesDao(): RecipesDao
