@@ -54,8 +54,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/spinner_background"
-        android:textColor="@color/primary_text_light"
+        android:background="@drawable/spinner_bg"
 
         />
 

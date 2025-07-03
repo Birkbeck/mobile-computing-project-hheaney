@@ -63,7 +63,7 @@ class ViewRecipeActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 }

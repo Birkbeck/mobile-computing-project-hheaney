@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import co.uk.bbk.culinarycookingapp.databinding.AddRecipeBinding
 import kotlinx.coroutines.launch
 import android.content.Context
+import android.content.Intent
 import java.io.File
 
 class AddRecipeActivity : AppCompatActivity() {
@@ -43,16 +44,34 @@ class AddRecipeActivity : AppCompatActivity() {
             pickImageLauncher.launch("image/*")
         }
 
-        ArrayAdapter.createFromResource(
+        /*ArrayAdapter.createFromResource(
             this,
             R.array.recipe_categories,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.recipeCategorySpinner.adapter = adapter
-        }
+        }*/
+
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.recipe_categories,
+            R.layout.spinner_item
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.recipeCategorySpinner.adapter = adapter
 
         recipesDb = RecipesDatabase.getInstance(this)
+
+        binding.homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
         binding.saveButton.setOnClickListener {
             val name = binding.recipeNameInput.text.toString()

@@ -30,7 +30,7 @@ class EditRecipeActivity: AppCompatActivity() {
 
         // used co pilot to help
         val categories = resources.getStringArray(R.array.recipe_categories)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categories)
+        val adapter = ArrayAdapter(this, R.layout.spinner_item, categories)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.editRecipeCategorySpinner.adapter = adapter
 
@@ -118,7 +118,7 @@ class EditRecipeActivity: AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 
