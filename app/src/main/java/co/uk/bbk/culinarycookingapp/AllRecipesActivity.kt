@@ -54,6 +54,12 @@ class AllRecipesActivity : AppCompatActivity() {
 
         val category = intent.getStringExtra("category")
     }
+
+    // To ensure up to date data is displayed after any changes
+    override fun onResume() {
+        super.onResume()
+        viewModel.readAllRecipes()
+    }
 }
 
 
