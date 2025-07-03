@@ -70,6 +70,7 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/action_button_background"
             android:textColor="@color/primary_text_light"
+            android:textStyle="bold"
             />
     </LinearLayout>
 
@@ -97,7 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/spinner_background"
-            android:textColor="@color/primary_text_light"/>
+            android:textColor="@color/primary_text_light"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/edit_recipe_name_label"
@@ -111,7 +113,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/details_background"
-            android:textColor="@color/secondary_text_light"/>
+            android:textColor="@color/edit_text_light"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/edit_recipe_ingredients_label"
@@ -128,7 +131,8 @@
             android:minLines="3"
             android:gravity="top"
             android:background="@color/details_background"
-            android:textColor="@color/secondary_text_light"/>
+            android:textColor="@color/edit_text_light"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/edit_recipe_instructions_label"
@@ -145,7 +149,8 @@
             android:minLines="3"
             android:gravity="top"
             android:background="@color/details_background"
-            android:textColor="@color/secondary_text_light"/>
+            android:textColor="@color/edit_text_light"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -173,6 +178,7 @@
             android:paddingEnd="8dp"
             android:backgroundTint="@color/nav_button_background"
             android:textColor="@color/primary_text_light"
+            android:textStyle="bold"
             />
 
         <Button
@@ -187,6 +193,7 @@
             android:paddingEnd="8dp"
             android:backgroundTint="@color/nav_button_background"
             android:textColor="@color/primary_text_light"
+            android:textStyle="bold"
             />
 
         <Button
@@ -201,6 +208,7 @@
             android:paddingEnd="8dp"
             android:backgroundTint="@color/action_button_background"
             android:textColor="@color/primary_text_light"
+            android:textStyle="bold"
             />
 
         <Button
@@ -214,7 +222,8 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:backgroundTint="@color/action_button_background"
-            android:textColor="@color/primary_text_light"/>
+            android:textColor="@color/primary_text_light"
+            android:textStyle="bold"/>
     </LinearLayout>
 
 

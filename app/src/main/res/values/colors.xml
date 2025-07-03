@@ -11,5 +11,6 @@
     <color name="action_button_background">#9575CD</color>
     <color name="spinner_background">#FFF8FB</color>
     <color name="details_background">#FFF8FB</color>
+    <color name="edit_text_light">#212121</color>
 
 </resources>
