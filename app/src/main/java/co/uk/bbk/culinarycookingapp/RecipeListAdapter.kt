@@ -34,7 +34,9 @@ class RecipeListAdapter :
             Log.d("RecipeAdapter", "Recipe image URI: $imageUri")
             try {
                 if(!imageUri.isNullOrEmpty()) {
-                    binding.recipeItemImage.setImageURI(Uri.parse(imageUri))
+                    val file = java.io.File(imageUri)
+                    binding.recipeItemImage.setImageURI(Uri.fromFile(file))
+                    //binding.recipeItemImage.setImageURI(Uri.parse(imageUri))
                 } else {
                     binding.recipeItemImage.setImageResource(R.drawable.chefskiss)
                 }

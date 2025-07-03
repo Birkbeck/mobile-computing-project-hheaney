@@ -2,11 +2,13 @@ package co.uk.bbk.culinarycookingapp
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import co.uk.bbk.culinarycookingapp.databinding.ViewRecipeBinding
+import java.io.File
 
 class ViewRecipeActivity : AppCompatActivity() {
 
@@ -37,9 +39,12 @@ class ViewRecipeActivity : AppCompatActivity() {
                     binding.recipeName.text = recipe.name
                     binding.recipeIngredients.text = recipe.ingredients
                     binding.recipeInstructions.text = recipe.instructions
-                    //it.imageUri?.let { imgRes ->
-                      //  binding.recipeImage.setImageResource(imgRes)
-                    //}
+                    if(!recipe.imageUri.isNullOrEmpty()) {
+                        var file = File(recipe.imageUri)
+                        if(file.exists()) {
+                            binding.recipeImage.setImageURI(Uri.fromFile(file))
+                        }
+                    }
                 }
             }
         }
