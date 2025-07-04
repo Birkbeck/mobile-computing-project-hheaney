@@ -69,7 +69,7 @@ class RecipesViewModel: ViewModel() {
 
     }
 
-    fun getRecipeById(id: Int): LiveData<Recipe?> {
+    fun getRecipeById(id: Long): LiveData<Recipe?> {
         val dao = recipesDao
         requireNotNull(dao) { "RecipesDao is not initialized" }
         return dao.getRecipeById(id)

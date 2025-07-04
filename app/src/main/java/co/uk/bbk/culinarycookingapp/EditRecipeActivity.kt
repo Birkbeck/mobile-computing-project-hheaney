@@ -44,9 +44,9 @@ class EditRecipeActivity: AppCompatActivity() {
         val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
         viewModel.recipesDao = dao
 
-        val recipeId = intent.getIntExtra("id", -1)
+        val recipeId = intent.getLongExtra("id", -1).toLong()
         Log.d("EditRecipeActivity", "Received recipe ID: $recipeId")
-        if(recipeId == -1) {
+        if(recipeId == -1L) {
             finish()
             return
         }

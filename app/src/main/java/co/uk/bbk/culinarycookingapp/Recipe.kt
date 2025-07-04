@@ -12,7 +12,7 @@ import java.io.Serializable
 // A user may add one or more details for the recipe.
 @Entity(tableName = "Recipes")
 data class Recipe (
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
     val name: String? = null,
     val ingredients: String? = null,
     val instructions: String? = null,

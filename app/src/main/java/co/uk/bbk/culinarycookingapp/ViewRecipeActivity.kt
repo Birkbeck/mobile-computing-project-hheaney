@@ -29,9 +29,9 @@ class ViewRecipeActivity : AppCompatActivity() {
         val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
         viewModel.recipesDao = dao
 
-        val recipeId = intent.getIntExtra("id", -1)
+        val recipeId = intent.getLongExtra("id", -1L)
         Log.d("ViewRecipeActivity", "Received recipe ID: $recipeId")
-        if (recipeId != -1) {
+        if (recipeId != -1L) {
             viewModel.getRecipeById(recipeId).observe(this) { recipe ->
                 Log.d("ViewRecipeActivity", "Observed recipe: $recipe")
                 recipe?.let {
@@ -50,7 +50,7 @@ class ViewRecipeActivity : AppCompatActivity() {
         }
 
         binding.editButton.setOnClickListener {
-            val recipeId = intent.getIntExtra("id", -1)
+            val recipeId = intent.getLongExtra("id", -1L)
             val intent = Intent(this, EditRecipeActivity::class.java)
             intent.putExtra("id", recipeId)
             startActivity(intent)

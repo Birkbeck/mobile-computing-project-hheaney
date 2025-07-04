@@ -14,10 +14,10 @@ interface RecipesDao {
     suspend fun getAllRecipes(): List<Recipe>
 
     @Query("SELECT * FROM Recipes WHERE id = :id")
-    fun getRecipeById(id: Int): LiveData<Recipe?>
+    fun getRecipeById(id: Long): LiveData<Recipe?>
 
     @Insert
-    suspend fun insertRecipe(recipe: Recipe)
+    suspend fun insertRecipe(recipe: Recipe): Long
 
     // For sample data
     @Insert(onConflict = OnConflictStrategy.REPLACE)
