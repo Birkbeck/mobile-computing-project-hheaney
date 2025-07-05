@@ -2,23 +2,19 @@ package co.uk.bbk.culinarycookingapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import co.uk.bbk.culinarycookingapp.databinding.ActivityAllRecipesBinding
+import co.uk.bbk.culinarycookingapp.databinding.ActivitySettingsBinding
 
-class AllRecipesActivity : AppCompatActivity() {
+class SettingsActivity: AppCompatActivity() {
 
-    private lateinit var binding: ActivityAllRecipesBinding
-    private val viewModel: RecipesViewModel by viewModels()
-    private lateinit var adapter: RecipeListAdapter
+    private lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAllRecipesBinding.inflate(layoutInflater)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.root.setOnApplyWindowInsetsListener { view, insets ->
@@ -27,40 +23,17 @@ class AllRecipesActivity : AppCompatActivity() {
             insets
         }
 
-        adapter = RecipeListAdapter()
-        binding.recipesRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recipesRecyclerView.adapter = adapter
+        val description = intent.getStringExtra("description")
+        val pageTitle = intent.getStringExtra("title") ?: getString(R.string.settings_title)
 
-        // sample data - test.  to be deleted
-        val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
-        viewModel.recipesDao = dao
-        viewModel.readAllRecipes()
-
-        viewModel.recipes.observe(this) { recipes ->
-            Log.d("BBK", "Observed recipes: $recipes")
-            val category = intent.getStringExtra("category")
-            binding.allRecipesTitle.text = category ?: "All Recipes"
-            val filteredRecipes = if (category != null) {
-                recipes.filter { it.category == category }
-            } else {
-                recipes
-            }
-            adapter.submitList(filteredRecipes)
-        }
+        binding.settingsDescription.text = description ?: getString(R.string.settings_description)
+        binding.settingsTitle.text = pageTitle
 
         binding.homeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
-
-        val category = intent.getStringExtra("category")
-    }
-
-    // To ensure up to date data is displayed after any changes
-    override fun onResume() {
-        super.onResume()
-        viewModel.readAllRecipes()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -94,7 +67,7 @@ class AllRecipesActivity : AppCompatActivity() {
             }
             R.id.profile -> {
                 val intent = Intent(this, SettingsActivity::class.java)
-                intent.putExtra("description", "Help & Support page selected. $disclaimerText")
+                intent.putExtra("description", "Profile page selected. $disclaimerText")
                 intent.putExtra("title", "Profile")
                 startActivity(intent)
                 return true
@@ -117,7 +90,3 @@ class AllRecipesActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
-
-
-
-

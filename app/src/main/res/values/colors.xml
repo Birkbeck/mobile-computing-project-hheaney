@@ -10,8 +10,10 @@
     <color name="nav_button_background">#4D90FF</color>
     <color name="action_button_background">#9575CD</color>
     <color name="spinner_background">#FFD8B0</color>
-    <color name="details_background">#FFF8FB</color>
+    <color name="details_background">#FFDAB9</color>
     <color name="edit_text_light">#212121</color>
     <color name="recycler_background">#FFD1DC</color>
+    <color name="toolbar_pastel_lavender">#E1BEE7</color>
+
 
 </resources>

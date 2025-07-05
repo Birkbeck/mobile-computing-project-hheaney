@@ -104,7 +104,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_recipe_name"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_light"/>
 
         <EditText
             android:id="@+id/edit_recipe_name_input"
@@ -119,7 +120,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_recipe_ingredients"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_light"/>
 
         <EditText
             android:id="@+id/edit_recipe_ingredients_input"
@@ -137,7 +139,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_recipe_instructions"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/primary_text_light"/>
 
         <EditText
             android:id="@+id/edit_recipe_instructions_input"

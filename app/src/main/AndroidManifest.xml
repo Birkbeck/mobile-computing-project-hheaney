@@ -26,6 +26,7 @@
         <activity android:name=".ViewRecipeActivity" />
         <activity android:name=".AddRecipeActivity" />
         <activity android:name=".EditRecipeActivity"/>
+        <activity android:name=".SettingsActivity"/>
 
     </application>
 

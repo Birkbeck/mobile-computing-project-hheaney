@@ -6,15 +6,17 @@ import android.widget.ArrayAdapter
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import co.uk.bbk.culinarycookingapp.databinding.AddRecipeBinding
 import kotlinx.coroutines.launch
 import android.content.Context
 import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
+import co.uk.bbk.culinarycookingapp.databinding.ActivityAddRecipeBinding
 import java.io.File
 
 class AddRecipeActivity : AppCompatActivity() {
 
-    private lateinit var binding: AddRecipeBinding
+    private lateinit var binding: ActivityAddRecipeBinding
     private lateinit var recipesDb: RecipesDatabase
     private var imageUri: Uri? = null
     private var copiedImagePath: String? = null
@@ -31,7 +33,7 @@ class AddRecipeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = AddRecipeBinding.inflate(layoutInflater)
+        binding = ActivityAddRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.root.setOnApplyWindowInsetsListener { view, insets ->
@@ -109,6 +111,60 @@ class AddRecipeActivity : AppCompatActivity() {
             e.printStackTrace()
             null
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.app_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val disclaimerText = "This functionality has intentionally not been implemented. It is not directly specified in my wireframes and is to demonstrate as proof of concept."
+        when (item.itemId) {
+            R.id.action_settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra("description", "Settings page selected. $disclaimerText")
+                intent.putExtra("title", "Settings")
+                startActivity(intent)
+                return true
+            }
+            R.id.about -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra("description", "About page selected. $disclaimerText")
+                intent.putExtra("title", "About")
+                startActivity(intent)
+                return true
+            }
+            R.id.helpandsupport -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra("description", "Help & Support page selected. $disclaimerText")
+                intent.putExtra("title", "Help & Support")
+                startActivity(intent)
+                return true
+            }
+            R.id.profile -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra("description", "Help & Support page selected. $disclaimerText")
+                intent.putExtra("title", "Profile")
+                startActivity(intent)
+                return true
+            }
+            R.id.toggletheme -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra("description", "Toggle Theme page selected. $disclaimerText")
+                intent.putExtra("title", "Toggle Theme")
+                startActivity(intent)
+                return true
+            }
+            R.id.logout -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra("description", "Logut page selected. $disclaimerText")
+                intent.putExtra("title", "Logout")
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
 
