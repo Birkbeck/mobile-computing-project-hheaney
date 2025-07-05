@@ -21,6 +21,7 @@ import java.util.concurrent.TimeoutException
 /**
  * Instrumented test for the RecipesDatabase.  This file tests the basic CRUD operations of the
  * database such as; create, retrieve, update and delete.
+ * 3 of 3 tests pass.
  */
 
 
