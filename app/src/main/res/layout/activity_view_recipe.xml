@@ -5,135 +5,152 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_light">
 
-    <!-- View Recipe page.
-         This page displays the details of a recipe including its name, ingredients, instructions,
-         and an image.  It also provides options to edit the recipe or navigate back to the main
-         menu. -->
-
-    <!-- Header for the recipe view.
-         Displays the recipe name and an icon related to that food category. -->
-    <LinearLayout
-        android:id="@+id/recipe_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <ScrollView
+        android:id="@+id/view_recipe_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center_vertical"
-        android:layout_marginTop="16dp">
+        app:layout_constraintBottom_toTopOf="@id/button_layout">
 
-        <ImageView
-            android:id="@+id/recipe_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/kiss"
-            android:contentDescription="@string/selected_recipe_icon_description"
-            android:layout_marginEnd="8dp"/>
-
-        <TextView
-            android:id="@+id/recipe_title"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/selected_recipe_name_title"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"/>
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <!-- Section for displaying the recipe image.
-         This section contains an ImageView to show the recipe image. -->
+            <!-- Header -->
+            <LinearLayout
+                android:id="@+id/recipe_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/recipe_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/kiss"
+                    android:contentDescription="@string/selected_recipe_icon_description"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/recipe_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_name_title"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"/>
+            </LinearLayout>
+
+            <!-- Image Section -->
+            <LinearLayout
+                android:id="@+id/image_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/recipe_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/chefskiss"
+                    android:contentDescription="@string/selected_recipe_image"/>
+            </LinearLayout>
+
+            <!-- Details Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginEnd="11dp">
+
+                <TextView
+                    android:id="@+id/recipe_name_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_name"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"/>
+
+                <TextView
+                    android:id="@+id/recipe_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_name_text"
+                    android:background="@drawable/rounded_details_background"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:id="@+id/ingredients_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_ingredients"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"/>
+
+                <TextView
+                    android:id="@+id/recipe_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_ingredients_text"
+                    android:background="@drawable/rounded_details_background"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:id="@+id/recipe_instructions_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_instructions"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"/>
+
+                <TextView
+                    android:id="@+id/recipe_instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_instructions_text"
+                    android:background="@drawable/rounded_details_background"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"
+                    android:padding="8dp"/>
+
+                <TextView
+                    android:id="@+id/recipe_category_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_category"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"/>
+
+                <TextView
+                    android:id="@+id/recipe_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_recipe_category_text"
+                    android:background="@drawable/rounded_details_background"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_text_light"
+                    android:padding="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
     <LinearLayout
-        android:id="@+id/image_section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/recipe_header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal">
-
-        <ImageView
-            android:id="@+id/recipe_image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/chefskiss"
-            android:contentDescription="@string/selected_recipe_image"
-            />
-    </LinearLayout>
-
-    <!-- Section for displaying recipe details.
-         This section contains TextViews for the recipe name, ingredients, and instructions. -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/image_section"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginEnd="11dp">
-
-        <TextView
-            android:id="@+id/recipe_name_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/selected_recipe_name"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"/>
-
-        <TextView
-            android:id="@+id/recipe_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/selected_recipe_name_text"
-            android:background="@color/details_background"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"
-            />
-
-        <TextView
-            android:id="@+id/ingredients_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/selected_recipe_ingredients"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"/>
-
-        <TextView
-            android:id="@+id/recipe_ingredients"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/selected_recipe_ingredients_text"
-            android:background="@color/details_background"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"
-            />
-
-        <TextView
-            android:id="@+id/recipe_instructions_label"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/selected_recipe_instructions"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"/>
-
-        <TextView
-            android:id="@+id/recipe_instructions"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/selected_recipe_instructions_text"
-            android:background="@color/details_background"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text_light"/>
-    </LinearLayout>
-
-    <!-- Section for navigation buttons.
-         This section contains buttons to navigate back, go home, or edit the recipe. -->
-    <LinearLayout
+        android:id="@+id/button_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -181,6 +198,5 @@
             android:textColor="@color/button_text_light"
             android:textStyle="bold"/>
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

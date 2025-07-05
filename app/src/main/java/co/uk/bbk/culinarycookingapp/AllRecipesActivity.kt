@@ -31,6 +31,19 @@ class AllRecipesActivity : AppCompatActivity() {
         binding.recipesRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.recipesRecyclerView.adapter = adapter
 
+        // co pilot
+        val spacing = (8 * resources.displayMetrics.density).toInt()
+        binding.recipesRecyclerView.addItemDecoration(object : androidx.recyclerview.widget.RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(
+                outRect: android.graphics.Rect,
+                view: android.view.View,
+                parent: androidx.recyclerview.widget.RecyclerView,
+                state: androidx.recyclerview.widget.RecyclerView.State
+            ) {
+                outRect.bottom = spacing
+            }
+        })
+
         // sample data - test.  to be deleted
         val dao = RecipesDatabase.getInstance(applicationContext).recipesDao()
         viewModel.recipesDao = dao

@@ -63,10 +63,14 @@
     <string name="selected_recipe_instructions">Instructions</string>
     <string name="selected_recipe_instructions_text">1)  Preheat oven to 350°F (175°C).\n2)
         Mix ingredients. \n3)  Bake for 30 minutes.\n"</string>
+    <string name="selected_recipe_category">Category</string>
+    <string name="selected_recipe_category_text">Dessert</string>
 
     <!-- View Recipe descriptions -->
     <string name="selected_recipe_icon_description">Selected Recipe Icon</string>
     <string name="selected_recipe_image">Selected Recipe Image</string>
+    <string name="selected_recipe_image_description">Selected Recipe Image</string>
+
 
     <!-- View All Recipes strings -->
     <string name="view_all_recipes_title">All Recipes</string>
